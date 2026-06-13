@@ -26,7 +26,7 @@ export default function About() {
   ];
 
   return (
-    <div className="w-full bg-white text-zinc-900 overflow-hidden">
+    <div className="relative w-full bg-white text-zinc-900 overflow-hidden">
       {/* Header */}
       <section className="max-w-7xl mx-auto px-6 py-20 text-center grid-bg">
         <span className="inline-block text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full animate-fade-in">

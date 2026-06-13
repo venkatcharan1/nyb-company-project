@@ -37,7 +37,7 @@ export default function Technologies() {
   ];
 
   return (
-    <div className="w-full bg-white text-zinc-900 overflow-hidden min-h-screen">
+    <div className="relative w-full bg-white text-zinc-900 overflow-hidden min-h-screen">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-purple-50/40 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-[600px] right-1/4 w-[600px] h-[600px] bg-indigo-50/40 rounded-full blur-[140px] pointer-events-none -z-10" />

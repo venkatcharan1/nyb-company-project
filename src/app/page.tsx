@@ -81,13 +81,13 @@ export default async function Home() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50 text-indigo-600 text-xs font-semibold mb-8 animate-pulse">
           WELCOME TO NAVAYUVABHARAT INFOTECH
         </div>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight text-zinc-950 max-w-4xl mx-auto">
-          Where It Meets <span className="gradient-text animate-pulse">Ingenuity</span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight text-zinc-950 max-w-4xl mx-auto animate-blur-fade-in">
+          Where It Meets <span className="gradient-text">Ingenuity</span>
         </h1>
-        <p className="text-zinc-650 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
+        <p className="text-zinc-650 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-medium animate-blur-fade-in" style={{ animationDelay: "500ms" }}>
           “where technology meets ingenuity” describes the process of inventing new things or solving problems through a combination of human ideas and the tools we’ve built.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center scale-in">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-fade-in" style={{ animationDelay: "1000ms" }}>
           <Link
             href="/contact"
             className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all shadow-md hover:shadow-lg text-sm hover:scale-[1.02]"

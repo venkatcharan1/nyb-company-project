@@ -188,4 +188,42 @@ nextjs-portal,
   transform: scale(1);
 }
 
+/* Premium Hero Animations */
+@keyframes blur-fade-in {
+  0% {
+    filter: blur(15px);
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-blur-fade-in {
+  opacity: 0;
+  filter: blur(15px);
+  transform: scale(0.95);
+  animation: blur-fade-in 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slide-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-fade-in {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: slide-fade-in 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 

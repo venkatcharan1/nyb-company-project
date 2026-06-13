@@ -44,7 +44,7 @@ export default async function Blog({
   );
 
   return (
-    <div className="w-full bg-white text-zinc-900 overflow-hidden min-h-screen">
+    <div className="relative w-full bg-white text-zinc-900 overflow-hidden min-h-screen">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-50/40 rounded-full blur-[140px] pointer-events-none -z-10" />
 

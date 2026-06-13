@@ -114,20 +114,20 @@ export default function Services() {
       <div className="absolute top-[800px] -left-1/4 w-[600px] h-[600px] bg-sky-50/40 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 py-20 text-center grid-bg reveal">
-        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+      <section className="max-w-7xl mx-auto px-6 py-20 text-center grid-bg fade-in-up active">
+        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full animate-fade-in">
           Capabilities
         </span>
         <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-950 tracking-tight mt-4 max-w-3xl mx-auto leading-tight">
           Enterprise Services & Solutions
         </h1>
-        <p className="text-zinc-600 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
+        <p className="text-zinc-650 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed font-medium">
           Robust consulting, secure networks, custom CRM portals, and scalable automations driving enterprise efficiency.
         </p>
       </section>
 
       {/* Client Logos Marquee */}
-      <section className="w-full py-12 border-y border-zinc-200/80 bg-zinc-50/40 overflow-hidden relative reveal">
+      <section className="w-full py-12 border-y border-zinc-200/80 bg-zinc-50/40 overflow-hidden relative scale-in">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
           <h2 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Trusted by Enterprise Leaders</h2>
         </div>
@@ -167,7 +167,8 @@ export default function Services() {
             return (
               <div
                 key={idx}
-                className="glass-card rounded-3xl p-8 md:p-12 border border-zinc-200/80 bg-white/70 backdrop-blur-md flex flex-col lg:flex-row gap-8 lg:gap-12 items-start relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-zinc-350 reveal"
+                style={{ transitionDelay: `${idx * 150}ms` }}
+                className="glass-card glass-card-hover rounded-3xl p-8 md:p-12 border border-zinc-200/80 bg-white/70 backdrop-blur-md flex flex-col lg:flex-row gap-8 lg:gap-12 items-start relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-zinc-350 scale-in"
               >
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-indigo-500 to-sky-500" />
                 
@@ -187,7 +188,7 @@ export default function Services() {
                         {service.badge}
                       </span>
                     </div>
-                    <p className="text-sm text-zinc-600 leading-relaxed max-w-4xl whitespace-pre-line">
+                    <p className="text-sm text-zinc-650 leading-relaxed max-w-4xl whitespace-pre-line font-medium">
                       {service.description}
                     </p>
                   </div>
@@ -195,7 +196,7 @@ export default function Services() {
                   {/* Bullet points */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-zinc-100">
                     {service.bullets.map((bullet, bidx) => (
-                      <div key={bidx} className="flex gap-3 items-center text-xs text-zinc-700 font-semibold">
+                      <div key={bidx} className="flex gap-3 items-center text-xs text-zinc-700 font-bold">
                         <CheckCircle2 className="w-4.5 h-4.5 text-indigo-600 shrink-0" />
                         <span>{bullet}</span>
                       </div>
@@ -209,12 +210,12 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12 mb-16 text-center reveal">
-        <div className="glass-card rounded-3xl p-12 border border-zinc-200 bg-zinc-50/50 space-y-6 max-w-4xl mx-auto">
+      <section className="max-w-7xl mx-auto px-6 py-12 mb-16 text-center fade-in-up">
+        <div className="glass-card rounded-3xl p-12 border border-zinc-200 bg-zinc-50/50 space-y-6 max-w-4xl mx-auto scale-in">
           <h2 className="text-3xl font-extrabold text-zinc-950">
             Ready to upgrade your enterprise systems?
           </h2>
-          <p className="text-zinc-600 text-sm max-w-md mx-auto">
+          <p className="text-zinc-600 text-sm max-w-md mx-auto font-medium">
             Get in touch with our certified engineers today and find out how we can customize solutions for your business.
           </p>
           <div className="flex justify-center pt-2">

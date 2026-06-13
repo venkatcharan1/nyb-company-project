@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,34 +102,42 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Drawer */}
-      {isOpen && (
-        <div className="md:hidden fixed inset-x-0 bottom-0 top-[69px] bg-white z-40 border-t border-zinc-200 flex flex-col p-6 shadow-xl overflow-y-auto">
-          <div className="flex flex-col gap-6 mb-8 text-left">
-            {links.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-xl font-bold transition-colors ${
-                    isActive ? "text-indigo-600" : "text-zinc-800 hover:text-zinc-950"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
-          <Link
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            className="w-full text-center py-3.5 rounded-full bg-gradient-to-r from-indigo-600 to-sky-500 text-white font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "calc(100vh - 69px)" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden fixed inset-x-0 bottom-0 top-[69px] bg-white z-40 border-t border-zinc-200 flex flex-col p-6 shadow-xl overflow-y-auto"
           >
-            Start Project <ArrowUpRight className="w-4 h-4" />
-          </Link>
-        </div>
-      )}
+            <div className="flex flex-col gap-6 mb-8 text-left">
+              {links.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-xl font-bold transition-colors ${
+                      isActive ? "text-indigo-600" : "text-zinc-800 hover:text-zinc-950"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </div>
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="w-full text-center py-3.5 rounded-full bg-gradient-to-r from-indigo-600 to-sky-500 text-white font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+            >
+              Start Project <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

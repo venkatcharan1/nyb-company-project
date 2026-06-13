@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,7 +34,8 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
-  },
+    openGraph: true,
+  } as any,
   twitter: {
     card: "summary_large_image",
     title: "Navayuva Bharati Infotech | Enterprise Software Solutions",
@@ -53,7 +55,11 @@ export default function RootLayout({
         <SmoothScroll />
         <ScrollReveal />
         <Navbar />
-        <main className="flex-grow pt-[84px]">{children}</main>
+        <main className="flex-grow pt-[84px]">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
         <Footer />
       </body>
     </html>

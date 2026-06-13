@@ -49,20 +49,20 @@ export default async function Blog({
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-50/40 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 py-20 text-center grid-bg">
-        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+      <section className="max-w-7xl mx-auto px-6 py-20 text-center grid-bg fade-in-up active">
+        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full animate-fade-in">
           Announcements & Insights
         </span>
         <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-950 tracking-tight mt-4 max-w-3xl mx-auto leading-tight">
           Our Blog & News
         </h1>
-        <p className="text-zinc-600 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
+        <p className="text-zinc-650 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed font-medium">
           Stay updated with company achievements, tech upgrades, events, and modern consulting insights.
         </p>
       </section>
 
       {/* Filters and Search */}
-      <section className="max-w-7xl mx-auto px-6 pb-8 border-b border-zinc-200 flex flex-col md:flex-row items-center justify-between gap-6 reveal">
+      <section className="max-w-7xl mx-auto px-6 pb-8 border-b border-zinc-200 flex flex-col md:flex-row items-center justify-between gap-6 scale-in">
         {/* Search */}
         <form action="/blog" method="GET" className="relative w-full md:w-[320px]">
           <input
@@ -104,13 +104,14 @@ export default async function Blog({
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-12 mb-16 reveal">
+      <section className="max-w-7xl mx-auto px-6 py-12 mb-16">
         {posts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {posts.map((post) => (
+            {posts.map((post, idx) => (
               <article
                 key={post.id}
-                className="glass-card rounded-3xl overflow-hidden flex flex-col h-full border border-zinc-200 bg-white/70 backdrop-blur-md transition-all duration-300 hover:shadow-md hover:border-zinc-300"
+                style={{ transitionDelay: `${idx * 100}ms` }}
+                className="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col h-full border border-zinc-200 bg-white/70 backdrop-blur-md transition-all duration-300 hover:shadow-md hover:border-zinc-300 scale-in"
               >
                 {post.coverImage && (
                   <div className="relative w-full h-[200px] overflow-hidden border-b border-zinc-200">
@@ -132,7 +133,7 @@ export default async function Blog({
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="text-zinc-600 text-xs line-clamp-3 leading-relaxed">
+                  <p className="text-zinc-650 text-xs line-clamp-3 leading-relaxed font-medium">
                     {post.summary}
                   </p>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-zinc-100 text-zinc-400 text-[10px] font-bold uppercase tracking-widest">
@@ -144,7 +145,7 @@ export default async function Blog({
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 text-zinc-500 border border-dashed border-zinc-200 rounded-3xl bg-zinc-50/50">
+          <div className="text-center py-20 text-zinc-500 border border-dashed border-zinc-200 rounded-3xl bg-zinc-50/50 scale-in">
             No articles found matching your criteria. Check back later!
           </div>
         )}

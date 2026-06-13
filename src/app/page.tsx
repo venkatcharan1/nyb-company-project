@@ -74,31 +74,29 @@ export default async function Home() {
     "Silicon Global Consulting",
     "Technotoise",
     "Firstsource"
-  ];
-
-  return (
-    <div className="w-full overflow-hidden bg-white text-zinc-900">
+  ];  return (
+    <div className="w-full overflow-hidden bg-white text-zinc-900 animate-fade-in">
       {/* Hero Section */}
-      <section className="relative w-full max-w-7xl mx-auto px-6 pt-16 pb-24 text-center grid-bg overflow-hidden reveal">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50 text-indigo-600 text-xs font-semibold mb-8">
+      <section className="relative w-full max-w-7xl mx-auto px-6 pt-16 pb-24 text-center grid-bg overflow-hidden fade-in-up active">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50 text-indigo-600 text-xs font-semibold mb-8 animate-pulse">
           WELCOME TO NAVAYUVABHARAT INFOTECH
         </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight text-zinc-950 max-w-4xl mx-auto">
-          Where It Meets <span className="gradient-text">Ingenuity</span>
+          Where It Meets <span className="gradient-text animate-pulse">Ingenuity</span>
         </h1>
-        <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-zinc-650 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
           “where technology meets ingenuity” describes the process of inventing new things or solving problems through a combination of human ideas and the tools we’ve built.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center scale-in">
           <Link
             href="/contact"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all shadow-md hover:shadow-lg text-sm"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all shadow-md hover:shadow-lg text-sm hover:scale-[1.02]"
           >
             How can we help you?
           </Link>
           <Link
             href="/services"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-zinc-200 hover:border-zinc-300 text-zinc-700 hover:text-zinc-950 font-bold transition-all text-sm bg-zinc-50"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-zinc-200 hover:border-zinc-300 text-zinc-700 hover:text-zinc-950 font-bold transition-all text-sm bg-zinc-50 hover:scale-[1.02]"
           >
             Explore Services
           </Link>
@@ -106,10 +104,10 @@ export default async function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-zinc-50 border-y border-zinc-100 py-16 w-full overflow-hidden reveal">
+      <section className="bg-zinc-50 border-y border-zinc-100 py-16 w-full overflow-hidden fade-in-up">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((stat, idx) => (
-            <div key={idx} className="space-y-1">
+            <div key={idx} className="space-y-1 scale-in">
               <div className="text-4xl md:text-5xl font-black text-indigo-600 tracking-tight">{stat.value}</div>
               <div className="text-xs text-zinc-500 font-bold uppercase tracking-wider">{stat.label}</div>
             </div>
@@ -118,7 +116,7 @@ export default async function Home() {
       </section>
 
       {/* Looping Client Logos Marquee */}
-      <section className="w-full py-12 border-b border-zinc-200 bg-zinc-50/20 overflow-hidden relative reveal">
+      <section className="w-full py-12 border-b border-zinc-200 bg-zinc-50/20 overflow-hidden relative scale-in">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
           <h2 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Trusted by Enterprise Leaders</h2>
         </div>
@@ -151,8 +149,8 @@ export default async function Home() {
       </section>
 
       {/* Services Grid (Bento style) */}
-      <section className="max-w-7xl mx-auto px-6 py-24 w-full overflow-hidden reveal">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <section className="max-w-7xl mx-auto px-6 py-24 w-full overflow-hidden">
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 fade-in-up">
           <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-950 tracking-tight">Our Core Services</h2>
           <p className="text-zinc-500 text-sm md:text-base leading-relaxed">
             Professional software engineering, CRM integration, security systems, and digital automation platforms.
@@ -165,7 +163,8 @@ export default async function Home() {
             return (
               <div
                 key={idx}
-                className="glass-card glass-card-hover rounded-2xl p-6 md:p-8 border border-zinc-200 flex flex-col justify-between text-left"
+                style={{ transitionDelay: `${idx * 100}ms` }}
+                className="glass-card glass-card-hover rounded-2xl p-6 md:p-8 border border-zinc-200 flex flex-col justify-between text-left scale-in"
               >
                 <div className="space-y-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center p-2.5 border ${service.color}`}>
@@ -189,9 +188,9 @@ export default async function Home() {
       </section>
 
       {/* Process Flow Section */}
-      <section className="bg-zinc-50 border-t border-zinc-200/60 py-24 w-full overflow-hidden reveal">
+      <section className="bg-zinc-50 border-t border-zinc-200/60 py-24 w-full overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 fade-in-up">
             <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-950 tracking-tight">Our Execution Process</h2>
             <p className="text-zinc-500 text-sm md:text-base">
               Six systematic execution workflows built to ensure top-tier delivery standards.
@@ -207,7 +206,11 @@ export default async function Home() {
               { num: "05", title: "Deploy", desc: "GoLive, Handover to business and close down the project. Deploy means to strategically position or utilize something for a specific purpose." },
               { num: "06", title: "Deliver", desc: "Test and evaluate, ready the concept for production and launch. By delivering meaningful work, they can create a fulfilling environment for their employees." },
             ].map((step, idx) => (
-              <div key={idx} className="glass-card rounded-2xl p-6 border border-zinc-200 flex flex-col justify-between text-left h-[220px]">
+              <div
+                key={idx}
+                style={{ transitionDelay: `${idx * 100}ms` }}
+                className="glass-card glass-card-hover rounded-2xl p-6 border border-zinc-200 flex flex-col justify-between text-left h-[220px] scale-in"
+              >
                 <div className="flex justify-between items-start">
                   <span className="text-sm font-bold text-indigo-600 uppercase tracking-widest">{step.num}.</span>
                   <span className="text-[10px] text-zinc-400 uppercase font-semibold">STAGE</span>
@@ -224,25 +227,26 @@ export default async function Home() {
 
       {/* Latest Blogs / Announcements */}
       {latestBlogs.length > 0 && (
-        <section className="max-w-7xl mx-auto px-6 py-24 border-t border-zinc-200 w-full overflow-hidden reveal">
-          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16">
+        <section className="max-w-7xl mx-auto px-6 py-24 border-t border-zinc-200 w-full overflow-hidden">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16 fade-in-up">
             <div className="space-y-4 text-left">
               <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-950 tracking-tight">Latest Announcements</h2>
               <p className="text-zinc-500 text-sm">Stay updated with our research, milestones, and technological innovations.</p>
             </div>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-zinc-200 hover:border-zinc-300 text-zinc-700 hover:text-zinc-950 text-xs font-semibold bg-zinc-50 transition-all shrink-0"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-zinc-200 hover:border-zinc-300 text-zinc-700 hover:text-zinc-950 text-xs font-semibold bg-zinc-50 transition-all shrink-0 hover:scale-[1.02]"
             >
               View All Posts <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {latestBlogs.map((post) => (
+            {latestBlogs.map((post, idx) => (
               <article
                 key={post.id}
-                className="glass-card rounded-2xl overflow-hidden flex flex-col h-full border border-zinc-200 text-left"
+                style={{ transitionDelay: `${idx * 100}ms` }}
+                className="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col h-full border border-zinc-200 text-left scale-in"
               >
                 {post.coverImage && (
                   <div className="relative w-full h-[200px] overflow-hidden border-b border-zinc-100">
@@ -277,7 +281,7 @@ export default async function Home() {
       )}
 
       {/* Call-to-Action */}
-      <section className="max-w-7xl mx-auto px-6 py-24 text-center w-full overflow-hidden reveal">
+      <section className="max-w-7xl mx-auto px-6 py-24 text-center w-full overflow-hidden scale-in">
         <div className="glass-card rounded-3xl p-12 md:p-20 border border-zinc-200 bg-zinc-50/50 space-y-6">
           <h2 className="text-3xl md:text-5xl font-black text-zinc-950 tracking-tight">
             Would you like to start a project with us?
@@ -285,7 +289,7 @@ export default async function Home() {
           <div className="flex justify-center pt-4">
             <Link
               href="/contact"
-              className="px-8 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all shadow-md hover:shadow-lg text-sm"
+              className="px-8 py-3.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all shadow-md hover:shadow-lg text-sm hover:scale-[1.02]"
             >
               Contact Us
             </Link>

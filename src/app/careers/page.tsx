@@ -43,24 +43,28 @@ export default async function Careers({
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-indigo-50/40 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 py-20 text-center grid-bg">
-        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+      <section className="max-w-7xl mx-auto px-6 py-20 text-center grid-bg fade-in-up active">
+        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full animate-fade-in">
           Join Our Team
         </span>
         <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-950 tracking-tight mt-4 max-w-3xl mx-auto leading-tight">
           Open Opportunities
         </h1>
-        <p className="text-zinc-600 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
+        <p className="text-zinc-650 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed font-medium">
           Be a part of a fast-growing, innovative software company building enterprise-grade applications.
         </p>
       </section>
 
       {/* Benefits / Why NYB */}
-      <section className="max-w-7xl mx-auto px-6 py-12 space-y-12 reveal">
-        <h2 className="text-3xl font-extrabold text-zinc-950 tracking-tight text-center">Why Work at NYB Infotech?</h2>
+      <section className="max-w-7xl mx-auto px-6 py-12 space-y-12">
+        <h2 className="text-3xl font-extrabold text-zinc-950 tracking-tight text-center fade-in-up">Why Work at NYB Infotech?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {benefits.map((ben, idx) => (
-            <div key={idx} className="glass-card rounded-3xl p-6 border border-zinc-200 bg-white/70 backdrop-blur-md space-y-3 transition-all duration-300 hover:shadow-sm">
+            <div
+              key={idx}
+              style={{ transitionDelay: `${idx * 150}ms` }}
+              className="glass-card glass-card-hover rounded-3xl p-6 border border-zinc-200 bg-white/70 backdrop-blur-md space-y-3 transition-all duration-300 hover:shadow-sm scale-in"
+            >
               <h4 className="text-lg font-bold text-zinc-950 tracking-tight">{ben.title}</h4>
               <p className="text-xs text-zinc-600 leading-relaxed">{ben.desc}</p>
             </div>
@@ -69,9 +73,9 @@ export default async function Careers({
       </section>
 
       {/* Jobs Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12 mb-16 space-y-12 reveal">
+      <section className="max-w-7xl mx-auto px-6 py-12 mb-16 space-y-12">
         {/* Filters */}
-        <div className="flex flex-wrap items-center gap-3 border-b border-zinc-200 pb-6">
+        <div className="flex flex-wrap items-center gap-3 border-b border-zinc-200 pb-6 scale-in">
           <Link
             href="/careers"
             className={`px-4 py-2 rounded-full text-xs font-semibold border transition-all ${
@@ -100,10 +104,11 @@ export default async function Careers({
         {/* Listings */}
         {jobs.length > 0 ? (
           <div className="grid grid-cols-1 gap-6">
-            {jobs.map((job) => (
+            {jobs.map((job, idx) => (
               <div
                 key={job.id}
-                className="glass-card rounded-3xl p-6 md:p-8 border border-zinc-200 bg-white/70 backdrop-blur-md flex flex-col md:flex-row justify-between items-start md:items-center gap-6 transition-all duration-300 hover:shadow-md hover:border-zinc-300"
+                style={{ transitionDelay: `${idx * 100}ms` }}
+                className="glass-card glass-card-hover rounded-3xl p-6 md:p-8 border border-zinc-200 bg-white/70 backdrop-blur-md flex flex-col md:flex-row justify-between items-start md:items-center gap-6 transition-all duration-300 hover:shadow-md hover:border-zinc-300 scale-in"
               >
                 <div className="space-y-4">
                   <div className="flex flex-wrap items-center gap-3">
@@ -134,7 +139,7 @@ export default async function Careers({
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 text-zinc-500 border border-dashed border-zinc-200 rounded-3xl bg-zinc-50/50">
+          <div className="text-center py-20 text-zinc-500 border border-dashed border-zinc-200 rounded-3xl bg-zinc-50/50 scale-in">
             No job opportunities currently open in this category. Check back soon!
           </div>
         )}

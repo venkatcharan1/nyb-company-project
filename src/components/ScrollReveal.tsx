@@ -21,7 +21,9 @@ export default function ScrollReveal() {
     );
 
     const observeElements = () => {
-      const elements = document.querySelectorAll(".reveal:not(.active)");
+      const elements = document.querySelectorAll(
+        ".reveal:not(.active), .fade-in-up:not(.active), .fade-in-left:not(.active), .fade-in-right:not(.active), .scale-in:not(.active)"
+      );
       elements.forEach((el) => observer.observe(el));
     };
 
